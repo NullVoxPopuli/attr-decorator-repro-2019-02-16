@@ -12,8 +12,6 @@ module.exports = function(environment) {
     environment,
     rootURL: '/',
     // locationType: 'auto', // default
-    // https://github.com/dollarshaveclub/ember-router-scroll#installation--usage
-    locationType: 'router-scroll',
     historySupportMiddleware: true,
 
     EmberENV: {
@@ -28,51 +26,11 @@ module.exports = function(environment) {
       EXTEND_PROTOTYPES: false,
     },
 
-    fontawesome: {
-      defaultPrefix: 'fas', // free-and-solid
-      icons: {
-        'free-brands-svg-icons': ['reddit'],
-        'free-solid-svg-icons': [
-          'qrcode',
-          'user-circle',
-          'address-book',
-          'sliders-h',
-          'sign-out-alt',
-          'dot-circle',
-          'plus',
-          'code',
-          'desktop',
-          'bed',
-          'video',
-          'angle-down',
-          'angle-up',
-          'angle-right',
-          'times',
-          'times-circle',
-          'phone',
-          'phone-volume',
-          'share',
-          'check-circle',
-          'exclamation-circle',
-          'check',
-          'ellipsis-h',
-          'globe',
-        ],
-      },
-    },
-
-    routerScroll: {
-      scrollElement: '#scrollContainer',
-    },
-
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
 
-    fastboot: {
-      hostWhitelist: ['emberclear.io', /^localhost:\d+$/],
-    },
   };
 
   if (environment === 'development') {
@@ -96,26 +54,6 @@ module.exports = function(environment) {
 
     ENV.APP.rootElement = '#ember-testing';
     ENV.APP.autoboot = false;
-    ENV.SW_DISABLED = process.env.SW_DISABLED;
-
-    ENV.percy = {
-      // breakpoints from bulma.io
-      // mobile: 768,
-      // desktop: 1024,
-      // widescreen: 1216,
-      breakpointsConfig: {
-        phone: 540,
-        mobile: 768,
-        desktop: 1024,
-        // widescreen: 1216,
-      },
-      defaultBreakpoints: [
-        'phone',
-        'mobile',
-        'desktop',
-        // 'widescreen',
-      ],
-    };
   }
 
   if (environment === 'production') {
